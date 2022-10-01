@@ -1,10 +1,49 @@
 '''
 Author: Odysseus-Abraham Kirikopoulos
 License: GNU General Public License v3.0
-Version: 1.0 Pre Release 1
+Version: 1.0 Stable
 '''
 
-from random_word import RandomWords # Importing the random word generator
+from random import randint
+
+food = ['apple', 'banana', 'pasta', 'pancake', 'ice cream', 'water', 'tea', 'marmelade', 'honey', 'meat', 'cod', 'nuts', 'onion', 'potato', 'toast']
+objects = ['ball', 'sign', 'fence', 'chimney', 'car', 'phone', 'trafic lights', 'tv', 'cable', 'earphones', 'desk', 'couch', 'radio', 'computer', 'table']
+clothes = ['scarf', 'gloves', 'shoes', 'shirt', 'jeans', 'trousers', 'flip-flops', 'shockes', 'mask', 'bag', 'jacket', 'clock', 'pijama', 'hat', 'belt']
+places = ['house', 'church', 'coffee shop', 'barber shop', 'office', 'hospital', 'college', 'school', 'airport', 'city', 'groccery store', 'hotel', 'cinema', 'police  station', 'gas station']
+others = ['hemlet', 'name', 'poster', 'swimming', 'route', 'map', 'tree', 'bush', 'language', 'motorcycle', 'bike', 'glass', 'gogles', 'eraser', 'book']
+
+i = randint(0, 14)
+word1 = food[i]
+i = randint(0, 14)
+word2 = objects[i]
+i = randint(0, 14)
+word3 = clothes[i]
+i = randint(0, 14)
+word4 = places[i]
+i = randint(0, 14)
+word5 = others[i]
+i = randint(0, 14)
+word6 = food[i]
+i = randint(0, 14)
+word7 = objects[i]
+i = randint(0, 14)
+word8 = clothes[i]
+i = randint(0, 14)
+word9 = places[i]
+i = randint(0, 14)
+word10 = others[i]
+i = randint(0, 14)
+word11 = food[i]
+i = randint(0, 14)
+word12 = objects[i]
+i = randint(0, 14)
+word13 = clothes[i]
+i = randint(0, 14)
+word14 = places[i]
+i = randint(0, 14)
+word15 = others[i]
+
+words = [word1, word2, word3, word4, word5, word6, word7, word8, word9, word10, word11, word12, word13, word14, word15]
 
 rounds = 0 # The number of rounds the user will play (max 4)
 
@@ -14,27 +53,11 @@ results_2 = 0
 results_3 = 0
 results_4 = 0
 
-word1 = RandomWords() # Generating the random words
-word2 = RandomWords()
-word3 = RandomWords()
-word4 = RandomWords()
-word5 = RandomWords()
-word6 = RandomWords()
-word7 = RandomWords()
-word8 = RandomWords()
-word9 = RandomWords()
-word10 = RandomWords()
-word11 = RandomWords()
-word12 = RandomWords()
-word13 = RandomWords()
-word14 = RandomWords()
-word15 = RandomWords()
-
 instructions = '''
 This game will test your memory.
 You will be shown 15 random words.
 You will tell them to your friend.
-Your friend will then tell you the words.
+Your friend will then have to repeat as many words as he can remember.
 You will then have to type how many words they remembered.
 You will repeat the process 3 more times (4 in total), using the same 15 words.
 Good luck!
@@ -45,14 +68,19 @@ gnu_license = '''
 Memory tester Copyright (C) 2022 Odysseus-Abraham Kirikopoulos
 This program comes with ABSOLUTELY NO WARRANTY.
 This is free software, and you are welcome to redistribute it under certain conditions.
-\n\n
+\n
 '''
 
-print(gnu_license + instructions + "Gathering random words... This might take a while...\n") # Printing the license and instructions
+startup = '''
+Author: Odysseus-Abraham Kirikopoulos
+License: GNU General Public License v3.0
+Version: 1.0 Stable
+\n
+'''
 
-words = [word1.get_random_word(), word2.get_random_word(), word3.get_random_word(), word4.get_random_word(), word5.get_random_word(), word6.get_random_word(), word7.get_random_word(), word8.get_random_word(), word9.get_random_word(), word10.get_random_word(), word11.get_random_word(), word12.get_random_word(), word13.get_random_word(), word14.get_random_word(), word15.get_random_word()] # Putting the words in a list
+print(gnu_license + instructions + startup) # Printing startup messages
 
-while rounds != 4: # The game loop
+while rounds <= 4: # The game loop
 
     rounds += 1 # Adding 1 to the number of rounds
     print("\nRound " + str(rounds) + " of 4") # Printing the round number
